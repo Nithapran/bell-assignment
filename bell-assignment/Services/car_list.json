@@ -7,6 +7,7 @@
       "make":"Land Rover",
       "marketPrice":125000.0,
       "model":"Range Rover",
+      "image":"Range_Rover",
       "prosList":[
          "You can go everywhere",
          "Good sound system"
@@ -21,6 +22,7 @@
       "make":"Alpine",
       "marketPrice":225000.0,
       "model":"Roadster",
+      "image":"Alpine_roadster",
       "prosList":[
          "This car is so fast",
          "Jame Bond would love to steal that car",
@@ -39,6 +41,7 @@
       "make":"BMW",
       "marketPrice":55900.0,
       "model":"3300i",
+      "image":"BMW_330i",
       "prosList":[
          "Your average business man car",
          "Can bring the family home safely",
@@ -55,6 +58,7 @@
       "make":"Mercedes Benz",
       "marketPrice":85900.0,
       "model":"GLE coupe",
+      "image":"Mercedez_benz_GLC",
       "prosList":[
          
       ],

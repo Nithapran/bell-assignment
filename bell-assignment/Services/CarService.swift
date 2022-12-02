@@ -7,19 +7,26 @@
 
 import Foundation
 
-enum CarServicesError: Error {
+enum CarServiceError: Error {
     case decodingArror
+    
     case notFoundError
 }
 
-protocol CarServices {
+protocol CarService {
+    /// Get cars from api
+    ///
+    /// - Parameter value: none
+    /// - Returns: List of cars
     func getAllCars() async throws -> [Car]
 }
 
-class CarServicesImplementation: CarServices {
+class CarServiceImplementation: CarService {
+    
+    
     func getAllCars() async throws -> [Car] {
         guard let path = Bundle.main.url(forResource: "car_list", withExtension: "json") else {
-            throw CarServicesError.notFoundError
+            throw CarServiceError.notFoundError
         }
         
         
@@ -29,7 +36,7 @@ class CarServicesImplementation: CarServices {
             return carList
             
         } catch {
-            throw CarServicesError.decodingArror
+            throw CarServiceError.decodingArror
         }
     }
     

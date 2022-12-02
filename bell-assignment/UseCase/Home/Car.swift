@@ -13,6 +13,11 @@ struct Car: Codable {
     var make: String
     var marketPrice: Double
     var model: String
+    var image: String
     var prosList: [String]
     var rating: Int
+    
+    func getPriceInKFormat() -> String {
+        return "\( marketPrice/1000)k"
+    }
 }
