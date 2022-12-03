@@ -22,6 +22,12 @@ class HomeViewController: UIViewController {
     }
     
     private func setUpView() {
+        let navBarTitleView = UILabel()
+        let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans-UltraBold", size: 20) ]
+        let myAttrString = NSAttributedString(string: "Guidomia", attributes: myAttribute as [NSAttributedString.Key : Any])
+        navBarTitleView.attributedText = myAttrString
+        setUpNavigationBar(isHidden: false, titleView: navBarTitleView)
+        
         self.tableView.rowHeight = UITableView.automaticDimension;
         self.tableView.estimatedRowHeight = 87.0
         self.tableView.delegate = self
@@ -64,12 +70,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as! CarTableViewCell
+            
             if indexPath == selectedCell {
-                cell.bottomViewHightContraint.priority = .defaultLow
+                cell.isExpanded = true
             } else {
-                
-                cell.bottomViewHightContraint.constant = 0
-                cell.bottomViewHightContraint.priority = .required
+                cell.isExpanded = false
             }
             cell.car = viewModel.cars[indexPath.row]
             return cell

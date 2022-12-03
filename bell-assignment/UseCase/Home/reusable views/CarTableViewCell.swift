@@ -24,6 +24,8 @@ class CarTableViewCell: UITableViewCell {
         }
     }
     
+    var isExpanded: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,6 +38,10 @@ class CarTableViewCell: UITableViewCell {
     }
     
     private func setUpView(car: Car?) {
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.clear
+        self.selectedBackgroundView = bgColorView
+        
         self.carNameLabel.text = car?.model
         self.carPriceLabel.text = car?.getPriceInKFormat()
         self.carImageView.image = UIImage(named: car?.image ?? "")
@@ -48,19 +54,32 @@ class CarTableViewCell: UITableViewCell {
             let star = UIImageView(image: UIImage(systemName: "star.fill"))
             self.carRatingStackView.addArrangedSubview(star)
         }
-        
-        // append pros as UILabel to stackView according to the rating
-        for pros in car?.prosList ?? [] {
-            let label = UILabel()
-            label.text = pros
-            self.carProsStackView.addArrangedSubview(label)
-        }
-        
-        // append cons as UILabel to stackView according to the rating
-        for cons in car?.consList ?? [] {
-            let label = UILabel()
-            label.text = cons
-            self.carConsStackView.addArrangedSubview(label)
+        if isExpanded {
+            
+            self.bottomViewHightContraint.priority = .defaultLow
+            // append pros as UILabel to stackView according to the rating
+            for pros in car?.getProsList() ?? [] {
+                let label = ProsConsView(frame: .zero)
+                label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                label.constraints.first?.priority = .required
+                label.prosConsLabel.text = pros
+                self.carProsStackView.addArrangedSubview(label)
+            }
+            
+            // append cons as UILabel to stackView according to the rating
+            for cons in car?.getConsList() ?? [] {
+                let label = ProsConsView(frame: .zero)
+                label.heightAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+                
+                label.constraints.first?.priority = .required
+                label.prosConsLabel.text = cons
+                self.carConsStackView.addArrangedSubview(label)
+            }
+        } else {
+            
+                self.bottomViewHightContraint.constant = 0
+                self.bottomViewHightContraint.priority = .required
+            
         }
     }
 }

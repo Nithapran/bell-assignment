@@ -20,4 +20,12 @@ struct Car: Codable {
     func getPriceInKFormat() -> String {
         return "\( marketPrice/1000)k"
     }
+    
+    func getProsList() -> [String] {
+        return prosList.filter { $0 != ""  }
+    }
+    
+    func getConsList() -> [String] {
+        return consList.filter { $0 != ""  }
+    }
 }
