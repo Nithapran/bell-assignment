@@ -14,6 +14,7 @@ class HomeViewModel {
     /// Array of cars
     var cars: [Car] = []
     
+    
     /// Called after fetch car from service
     var didFetchCar: (() -> Void)?
     

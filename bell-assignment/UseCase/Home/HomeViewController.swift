@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedCell: IndexPath = IndexPath(row: 0, section: 0)
+    
     var viewModel: HomeViewModel = HomeViewModel(service: CarServiceImplementation())
 
     override func viewDidLoad() {
@@ -40,12 +42,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as! CarTableViewCell
+        if indexPath == selectedCell {
+            cell.bottomViewHightContraint.priority = .defaultLow
+        } else {
+            
+            cell.bottomViewHightContraint.constant = 0
+            cell.bottomViewHightContraint.priority = .required
+        }
         cell.car = viewModel.cars[indexPath.row]
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedCell != indexPath {
+            selectedCell = indexPath
+            self.tableView.reloadData()
+        }
+        
+    }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
 }
 

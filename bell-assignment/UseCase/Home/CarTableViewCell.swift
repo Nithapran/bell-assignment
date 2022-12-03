@@ -8,9 +8,9 @@
 import UIKit
 
 class CarTableViewCell: UITableViewCell {
-
-
-    @IBOutlet weak var topViewBottomContraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var bottomViewHightContraint: NSLayoutConstraint!
     @IBOutlet weak var carRatingStackView: UIStackView!
     @IBOutlet weak var carConsStackView: UIStackView!
     @IBOutlet weak var carProsStackView: UIStackView!
@@ -28,10 +28,10 @@ class CarTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -40,12 +40,27 @@ class CarTableViewCell: UITableViewCell {
         self.carPriceLabel.text = car?.getPriceInKFormat()
         self.carImageView.image = UIImage(named: car?.image ?? "")
         carRatingStackView.subviews.forEach { (view) in view.removeFromSuperview() } // remove stackview caches
+        carProsStackView.subviews.forEach { (view) in view.removeFromSuperview() } // remove stackview caches
+        carConsStackView.subviews.forEach { (view) in view.removeFromSuperview() } // remove stackview caches
         
         // append stars as UIImageView to stackView according to the rating
         for _ in 1...(car?.rating ?? 0) {
             let star = UIImageView(image: UIImage(systemName: "star.fill"))
             self.carRatingStackView.addArrangedSubview(star)
         }
+        
+        // append pros as UILabel to stackView according to the rating
+        for pros in car?.prosList ?? [] {
+            let label = UILabel()
+            label.text = pros
+            self.carProsStackView.addArrangedSubview(label)
+        }
+        
+        // append cons as UILabel to stackView according to the rating
+        for cons in car?.consList ?? [] {
+            let label = UILabel()
+            label.text = cons
+            self.carConsStackView.addArrangedSubview(label)
+        }
     }
-    
 }
