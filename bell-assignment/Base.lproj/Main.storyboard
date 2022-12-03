@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hK2-6M-iav">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1L-nO-8yH">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rq9-zN-Wps">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="763"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="719"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -42,13 +42,32 @@
                             <constraint firstItem="y1L-nO-8yH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kma-Bn-ug3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9a9-53-QFW"/>
                     <connections>
                         <outlet property="tableView" destination="rq9-zN-Wps" id="Dly-ye-nSA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="-28"/>
+            <point key="canvasLocation" x="960" y="-28.436018957345969"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8hd-hQ-YnY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hK2-6M-iav" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ez1-vn-iZg">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="k0R-A5-sGY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqa-WI-Xws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30.769230769230766" y="-28.436018957345969"/>
         </scene>
     </scenes>
     <resources>

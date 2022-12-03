@@ -22,6 +22,9 @@
 		A0D7431A293A60B700977C5E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74319293A60B700977C5E /* HomeViewModel.swift */; };
 		A0D7431D293A622E00977C5E /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D7431B293A622E00977C5E /* CarTableViewCell.swift */; };
 		A0D7431E293A622E00977C5E /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D7431C293A622E00977C5E /* CarTableViewCell.xib */; };
+		A0D74321293BBF4100977C5E /* TopAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D7431F293BBF4100977C5E /* TopAdTableViewCell.swift */; };
+		A0D74322293BBF4100977C5E /* TopAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D74320293BBF4100977C5E /* TopAdTableViewCell.xib */; };
+		A0D74325293BC22900977C5E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74324293BC22900977C5E /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		A0D74319293A60B700977C5E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A0D7431B293A622E00977C5E /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		A0D7431C293A622E00977C5E /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
+		A0D7431F293BBF4100977C5E /* TopAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAdTableViewCell.swift; sourceTree = "<group>"; };
+		A0D74320293BBF4100977C5E /* TopAdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopAdTableViewCell.xib; sourceTree = "<group>"; };
+		A0D74324293BC22900977C5E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		A0D742DF293A511E00977C5E /* bell-assignment */ = {
 			isa = PBXGroup;
 			children = (
+				A0D74323293BC20E00977C5E /* Extensions */,
 				A0D74311293A557800977C5E /* UseCase */,
 				A0D74310293A556E00977C5E /* Services */,
 				A0D742E0293A511E00977C5E /* AppDelegate.swift */,
@@ -165,8 +172,18 @@
 				A0D7431B293A622E00977C5E /* CarTableViewCell.swift */,
 				A0D7431C293A622E00977C5E /* CarTableViewCell.xib */,
 				A0D74314293A568400977C5E /* Car.swift */,
+				A0D7431F293BBF4100977C5E /* TopAdTableViewCell.swift */,
+				A0D74320293BBF4100977C5E /* TopAdTableViewCell.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A0D74323293BC20E00977C5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0D74324293BC22900977C5E /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +292,7 @@
 			files = (
 				A0D742ED293A512100977C5E /* LaunchScreen.storyboard in Resources */,
 				A0D742EA293A512100977C5E /* Assets.xcassets in Resources */,
+				A0D74322293BBF4100977C5E /* TopAdTableViewCell.xib in Resources */,
 				A0D7431E293A622E00977C5E /* CarTableViewCell.xib in Resources */,
 				A0D74317293A56BA00977C5E /* car_list.json in Resources */,
 				A0D742E8293A511E00977C5E /* Main.storyboard in Resources */,
@@ -306,8 +324,10 @@
 				A0D7431D293A622E00977C5E /* CarTableViewCell.swift in Sources */,
 				A0D7431A293A60B700977C5E /* HomeViewModel.swift in Sources */,
 				A0D742E1293A511E00977C5E /* AppDelegate.swift in Sources */,
+				A0D74325293BC22900977C5E /* UIViewController+Extensions.swift in Sources */,
 				A0D74315293A568400977C5E /* Car.swift in Sources */,
 				A0D74313293A560E00977C5E /* CarService.swift in Sources */,
+				A0D74321293BBF4100977C5E /* TopAdTableViewCell.swift in Sources */,
 				A0D742E3293A511E00977C5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

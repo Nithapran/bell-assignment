@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedCell: IndexPath = IndexPath(row: 0, section: 0)
+    var selectedCell: IndexPath = IndexPath(row: 0, section: 2)
     
     var viewModel: HomeViewModel = HomeViewModel(service: CarServiceImplementation())
 
@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil), forCellReuseIdentifier: "CarTableViewCell")
+        tableView.register(UINib(nibName: "TopAdTableViewCell", bundle: nil), forCellReuseIdentifier: "TopAdTableViewCell")
         
         self.viewModel.didFetchCar = { [weak self] in
             self?.tableView.reloadData()
@@ -36,33 +37,68 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.viewModel.cars.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 1
+        case 2:
+            return self.viewModel.cars.count
+        default:
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as! CarTableViewCell
-        if indexPath == selectedCell {
-            cell.bottomViewHightContraint.priority = .defaultLow
-        } else {
-            
-            cell.bottomViewHightContraint.constant = 0
-            cell.bottomViewHightContraint.priority = .required
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopAdTableViewCell", for: indexPath) as! TopAdTableViewCell
+            return cell
+        case 1:
+            return UITableViewCell()
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as! CarTableViewCell
+            if indexPath == selectedCell {
+                cell.bottomViewHightContraint.priority = .defaultLow
+            } else {
+                
+                cell.bottomViewHightContraint.constant = 0
+                cell.bottomViewHightContraint.priority = .required
+            }
+            cell.car = viewModel.cars[indexPath.row]
+            return cell
+        default:
+            return UITableViewCell()
         }
-        cell.car = viewModel.cars[indexPath.row]
-        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedCell != indexPath {
+        if selectedCell != indexPath && indexPath.section == 2 {
             selectedCell = indexPath
-            self.tableView.reloadData()
+            self.tableView.reloadSections(IndexSet(integer: 2), with: .automatic)
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch indexPath.section {
+        case 0:
+            return 196
+        case 1:
+            return 0
+        case 2:
+            return UITableView.automaticDimension
+        default:
+            return 0
+        }
+        
     }
     
 }
