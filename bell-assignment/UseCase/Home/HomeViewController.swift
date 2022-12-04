@@ -29,7 +29,15 @@ class HomeViewController: UIViewController {
         let myAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "GillSans-UltraBold", size: 20) ]
         let myAttrString = NSAttributedString(string: "Guidomia", attributes: myAttribute as [NSAttributedString.Key : Any])
         navBarTitleView.attributedText = myAttrString
-        setUpNavigationBar(isHidden: false, titleView: navBarTitleView)
+        
+        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        menuButton.contentMode = .center
+        let menuImage = UIImage(named: "humburgerButton")?.withRenderingMode(.alwaysTemplate)
+        
+        menuButton.setImage(menuImage, for: .normal)
+        menuButton.tintColor = .white
+        let rightBarButton = UIBarButtonItem(customView: menuButton)
+        setUpNavigationBar(isHidden: false, titleView: navBarTitleView, rightBarButton: rightBarButton)
         setUpTableViewView()
         self.viewModel.didFetchCar = { [weak self] in
             self?.tableView.reloadData()

@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func setUpNavigationBar(isHidden: Bool, titleView: UIView?) {
+    func setUpNavigationBar(isHidden: Bool, titleView: UIView?, rightBarButton: UIBarButtonItem) {
+        
+        self.navigationItem.rightBarButtonItem = rightBarButton
         
         if let titleView = titleView {
             navigationController?.navigationBar.topItem?.titleView = titleView
