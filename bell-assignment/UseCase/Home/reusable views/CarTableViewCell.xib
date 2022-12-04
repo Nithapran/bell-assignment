@@ -149,13 +149,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="bottomViewHightContraint" destination="Cjh-YS-F9z" id="FEB-CY-UHH"/>
                 <outlet property="carConsStackView" destination="gUr-tQ-v3S" id="0Oc-ar-h1w"/>
                 <outlet property="carImageView" destination="ARU-h0-H2C" id="ITH-9V-pnt"/>
                 <outlet property="carNameLabel" destination="8Lb-wa-t77" id="214-WL-8Rb"/>
                 <outlet property="carPriceLabel" destination="yNH-VA-pmF" id="3c0-GW-5c2"/>
                 <outlet property="carProsStackView" destination="fCs-So-quA" id="ClX-md-ym4"/>
                 <outlet property="carRatingStackView" destination="zlA-xP-PGs" id="IaI-o3-HYq"/>
+                <outlet property="collapsedViewBottomContraint" destination="Cjh-YS-F9z" id="LqM-jg-9Wh"/>
             </connections>
             <point key="canvasLocation" x="130.76923076923077" y="83.175355450236964"/>
         </tableViewCell>
@@ -163,10 +163,10 @@
     <resources>
         <image name="Alpine_roadster" width="119" height="67"/>
         <namedColor name="AccentColor">
-            <color red="0.9882352941176471" green="0.37647058823529411" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98799997568130493" green="0.37599998712539673" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondaryBackgroundColor">
-            <color red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.83499997854232788" green="0.83499997854232788" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

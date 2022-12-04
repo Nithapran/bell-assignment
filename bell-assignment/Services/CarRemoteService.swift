@@ -1,5 +1,5 @@
 //
-//  CarServices.swift
+//  CarRemoteService.swift
 //  bell-assignment
 //
 //  Created by Nithaparan Francis on 2022-12-02.
@@ -13,15 +13,25 @@ enum CarServiceError: Error {
     case notFoundError
 }
 
-protocol CarService {
-    /// Get cars from api
+protocol CarDataSource {
+    /// Get car list
     ///
     /// - Parameter value: none
     /// - Returns: List of cars
     func getAllCars() async throws -> [Car]
+    
+    /// Get car list
+    ///
+    /// - Parameter value: none
+    /// - Returns: List of cars
+    func addcar(car: Car) async -> Car?
 }
 
-class CarServiceImplementation: CarService {
+class CarRemoteService: CarDataSource {
+    func addcar(car: Car) async -> Car? {
+        return nil
+    }
+    
     
     
     func getAllCars() async throws -> [Car] {

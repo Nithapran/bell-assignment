@@ -10,7 +10,7 @@ import UIKit
 class CarTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var bottomViewHightContraint: NSLayoutConstraint!
+    @IBOutlet weak var collapsedViewBottomContraint: NSLayoutConstraint!
     @IBOutlet weak var carRatingStackView: UIStackView!
     @IBOutlet weak var carConsStackView: UIStackView!
     @IBOutlet weak var carProsStackView: UIStackView!
@@ -56,7 +56,7 @@ class CarTableViewCell: UITableViewCell {
         }
         if isExpanded {
             
-            self.bottomViewHightContraint.priority = .defaultLow
+            self.collapsedViewBottomContraint.priority = .defaultLow
             // append pros as UILabel to stackView according to the rating
             for pros in car?.getProsList() ?? [] {
                 let label = ProsConsView(frame: .zero)
@@ -77,8 +77,8 @@ class CarTableViewCell: UITableViewCell {
             }
         } else {
             
-                self.bottomViewHightContraint.constant = 0
-                self.bottomViewHightContraint.priority = .required
+                self.collapsedViewBottomContraint.constant = 0
+                self.collapsedViewBottomContraint.priority = .required
             
         }
     }

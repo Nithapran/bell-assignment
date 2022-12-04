@@ -16,7 +16,7 @@
 		A0D742F8293A512200977C5E /* bell_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D742F7293A512200977C5E /* bell_assignmentTests.swift */; };
 		A0D74302293A512200977C5E /* bell_assignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74301293A512200977C5E /* bell_assignmentUITests.swift */; };
 		A0D74304293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74303293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift */; };
-		A0D74313293A560E00977C5E /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74312293A560E00977C5E /* CarService.swift */; };
+		A0D74313293A560E00977C5E /* CarRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74312293A560E00977C5E /* CarRemoteService.swift */; };
 		A0D74315293A568400977C5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74314293A568400977C5E /* Car.swift */; };
 		A0D74317293A56BA00977C5E /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = A0D74316293A56BA00977C5E /* car_list.json */; };
 		A0D7431A293A60B700977C5E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74319293A60B700977C5E /* HomeViewModel.swift */; };
@@ -31,6 +31,12 @@
 		A0D7432E293BEA1C00977C5E /* CarFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D7432C293BEA1C00977C5E /* CarFilterTableViewCell.xib */; };
 		A0EEF58C293BF61300A70F63 /* FiltersPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF58B293BF61300A70F63 /* FiltersPickerView.swift */; };
 		A0EEF58E293BF62200A70F63 /* FiltersPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0EEF58D293BF62200A70F63 /* FiltersPickerView.xib */; };
+		A0EEF591293C1F2500A70F63 /* CarsDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF58F293C1F2500A70F63 /* CarsDataStore.xcdatamodeld */; };
+		A0EEF598293C2C0200A70F63 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF597293C2C0200A70F63 /* CoreDataStack.swift */; };
+		A0EEF59A293C2F4E00A70F63 /* CarLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF599293C2F4E00A70F63 /* CarLocalService.swift */; };
+		A0EEF59D293C36D100A70F63 /* CarModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */; };
+		A0EEF59E293C36D100A70F63 /* CarModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */; };
+		A0EEF5A0293C496100A70F63 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59F293C496100A70F63 /* CarRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +70,7 @@
 		A0D742FD293A512200977C5E /* bell-assignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bell-assignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D74301293A512200977C5E /* bell_assignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bell_assignmentUITests.swift; sourceTree = "<group>"; };
 		A0D74303293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bell_assignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A0D74312293A560E00977C5E /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
+		A0D74312293A560E00977C5E /* CarRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRemoteService.swift; sourceTree = "<group>"; };
 		A0D74314293A568400977C5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A0D74316293A56BA00977C5E /* car_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		A0D74319293A60B700977C5E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +85,12 @@
 		A0D7432C293BEA1C00977C5E /* CarFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarFilterTableViewCell.xib; sourceTree = "<group>"; };
 		A0EEF58B293BF61300A70F63 /* FiltersPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPickerView.swift; sourceTree = "<group>"; };
 		A0EEF58D293BF62200A70F63 /* FiltersPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersPickerView.xib; sourceTree = "<group>"; };
+		A0EEF590293C1F2500A70F63 /* CarsDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarsDataStore.xcdatamodel; sourceTree = "<group>"; };
+		A0EEF597293C2C0200A70F63 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A0EEF599293C2F4E00A70F63 /* CarLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLocalService.swift; sourceTree = "<group>"; };
+		A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A0EEF59F293C496100A70F63 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +141,11 @@
 		A0D742DF293A511E00977C5E /* bell-assignment */ = {
 			isa = PBXGroup;
 			children = (
+				A0EEF58F293C1F2500A70F63 /* CarsDataStore.xcdatamodeld */,
+				A0EEF596293C2BE200A70F63 /* CoreData */,
+				A0D74310293A556E00977C5E /* Services */,
 				A0D74323293BC20E00977C5E /* Extensions */,
 				A0D74311293A557800977C5E /* UseCase */,
-				A0D74310293A556E00977C5E /* Services */,
 				A0D742E0293A511E00977C5E /* AppDelegate.swift */,
 				A0D742E2293A511E00977C5E /* SceneDelegate.swift */,
 				A0D742E6293A511E00977C5E /* Main.storyboard */,
@@ -163,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D74316293A56BA00977C5E /* car_list.json */,
-				A0D74312293A560E00977C5E /* CarService.swift */,
+				A0D74312293A560E00977C5E /* CarRemoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 				A0D742E4293A511E00977C5E /* HomeViewController.swift */,
 				A0D74319293A60B700977C5E /* HomeViewModel.swift */,
 				A0D74314293A568400977C5E /* Car.swift */,
+				A0EEF59F293C496100A70F63 /* CarRepository.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -210,6 +225,17 @@
 				A0EEF58D293BF62200A70F63 /* FiltersPickerView.xib */,
 			);
 			path = "reusable views";
+			sourceTree = "<group>";
+		};
+		A0EEF596293C2BE200A70F63 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */,
+				A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */,
+				A0EEF597293C2C0200A70F63 /* CoreDataStack.swift */,
+				A0EEF599293C2F4E00A70F63 /* CarLocalService.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,16 +377,22 @@
 			files = (
 				A0EEF58C293BF61300A70F63 /* FiltersPickerView.swift in Sources */,
 				A0D742E5293A511E00977C5E /* HomeViewController.swift in Sources */,
+				A0EEF59D293C36D100A70F63 /* CarModel+CoreDataClass.swift in Sources */,
 				A0D7431D293A622E00977C5E /* CarTableViewCell.swift in Sources */,
 				A0D7431A293A60B700977C5E /* HomeViewModel.swift in Sources */,
 				A0D742E1293A511E00977C5E /* AppDelegate.swift in Sources */,
+				A0EEF59E293C36D100A70F63 /* CarModel+CoreDataProperties.swift in Sources */,
 				A0D74325293BC22900977C5E /* UIViewController+Extensions.swift in Sources */,
+				A0EEF591293C1F2500A70F63 /* CarsDataStore.xcdatamodeld in Sources */,
+				A0EEF598293C2C0200A70F63 /* CoreDataStack.swift in Sources */,
+				A0EEF5A0293C496100A70F63 /* CarRepository.swift in Sources */,
 				A0D74315293A568400977C5E /* Car.swift in Sources */,
-				A0D74313293A560E00977C5E /* CarService.swift in Sources */,
+				A0D74313293A560E00977C5E /* CarRemoteService.swift in Sources */,
 				A0D74321293BBF4100977C5E /* TopAdTableViewCell.swift in Sources */,
 				A0D7432D293BEA1C00977C5E /* CarFilterTableViewCell.swift in Sources */,
 				A0D742E3293A511E00977C5E /* SceneDelegate.swift in Sources */,
 				A0D74327293BD4AB00977C5E /* ProsConsView.swift in Sources */,
+				A0EEF59A293C2F4E00A70F63 /* CarLocalService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +736,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0EEF58F293C1F2500A70F63 /* CarsDataStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0EEF590293C1F2500A70F63 /* CarsDataStore.xcdatamodel */,
+			);
+			currentVersion = A0EEF590293C1F2500A70F63 /* CarsDataStore.xcdatamodel */;
+			path = CarsDataStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A0D742D5293A511E00977C5E /* Project object */;
 }

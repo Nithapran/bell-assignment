@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class HomeViewModel {
-    private let service: CarService
+    private let repository: CarRepository
     
     /// Array of cars
     private var cars: [Car] = []
@@ -28,8 +28,8 @@ class HomeViewModel {
     ///
     /// - Parameter value: service: CarService type
     /// - Returns: none
-    init(service: CarService) {
-        self.service = service
+    init(repository: CarRepository) {
+        self.repository = repository
     }
     
     /// Get cars from api
@@ -37,27 +37,30 @@ class HomeViewModel {
     /// - Parameter value: none
     /// - Returns: none
     func getAllCars() {
-        
         Task.init {
             do {
-                let carList = try await service.getAllCars()
+                let carList =  try await self.repository.getAllCars()
                 self.cars = carList
-                self.presentableCars = cars
+                self.presentableCars = carList
                 self.didFetchCar?()
-                
-                
-            } catch {
-                if let err = error as? CarServiceError {
-                    switch err {
-                    case .decodingArror:
-                        print("decoding error")
-                    case .notFoundError:
-                        print("json not found")
+            } catch  {
+                    if let err = error as? CarServiceError {
+                        switch err {
+                        case .decodingArror:
+                            print("decoding error")
+                        case .notFoundError:
+                            print("json not found")
+                        }
                     }
+                    
                 }
-                
-            }
+            
         }
+            
+        }
+    
+    
+    func getCarsFromLocalRepository() {
         
     }
     
@@ -142,6 +145,5 @@ class HomeViewModel {
         self.selectedModel = nil
         self.presentableCars = self.cars
     }
-    
     
 }

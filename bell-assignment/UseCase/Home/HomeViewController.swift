@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     var selectedCell: IndexPath = IndexPath(row: 0, section: 2)
     
-    var viewModel: HomeViewModel = HomeViewModel(service: CarServiceImplementation())
+    var viewModel: HomeViewModel = HomeViewModel(repository: CarDataRepository(remoteDataSource: CarRemoteService(), localDataSource: CarLocalService()))
 
     override func viewDidLoad() {
         super.viewDidLoad()
