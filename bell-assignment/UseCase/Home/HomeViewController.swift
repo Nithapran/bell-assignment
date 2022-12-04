@@ -27,19 +27,21 @@ class HomeViewController: UIViewController {
         let myAttrString = NSAttributedString(string: "Guidomia", attributes: myAttribute as [NSAttributedString.Key : Any])
         navBarTitleView.attributedText = myAttrString
         setUpNavigationBar(isHidden: false, titleView: navBarTitleView)
-        
+        setUpTableViewView()
+        self.viewModel.didFetchCar = { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func setUpTableViewView() {
         self.tableView.rowHeight = UITableView.automaticDimension;
         self.tableView.estimatedRowHeight = 87.0
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil), forCellReuseIdentifier: "CarTableViewCell")
         tableView.register(UINib(nibName: "TopAdTableViewCell", bundle: nil), forCellReuseIdentifier: "TopAdTableViewCell")
-        
-        self.viewModel.didFetchCar = { [weak self] in
-            self?.tableView.reloadData()
-        }
+        tableView.register(UINib(nibName: "CarFilterTableViewCell", bundle: nil), forCellReuseIdentifier: "CarFilterTableViewCell")
     }
-
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -54,7 +56,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             return 1
         case 2:
-            return self.viewModel.cars.count
+            return self.viewModel.presentableCars.count
         default:
             return 0
         }
@@ -67,7 +69,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopAdTableViewCell", for: indexPath) as! TopAdTableViewCell
             return cell
         case 1:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CarFilterTableViewCell", for: indexPath) as! CarFilterTableViewCell
+            cell.selectedMake = viewModel.selectedMake
+            cell.selectedModel = viewModel.selectedModel
+            cell.delegate = self
+            return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as! CarTableViewCell
             
@@ -76,7 +82,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.isExpanded = false
             }
-            cell.car = viewModel.cars[indexPath.row]
+            cell.car = viewModel.presentableCars[indexPath.row]
             return cell
         default:
             return UITableViewCell()
@@ -97,7 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 196
         case 1:
-            return 0
+            return UITableView.automaticDimension
         case 2:
             return UITableView.automaticDimension
         default:
@@ -105,6 +111,32 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+}
+
+extension HomeViewController: CarFilterTableViewCellDelegate {
+    func didMakeButtonClicked() {
+        let picker = FiltersPickerView(frame: self.view.frame)
+        picker.didItemSelected = { [weak self] (make) in
+            self?.viewModel.didSelectMake(make: make)
+            self?.tableView.reloadData()
+        }
+
+        picker.data = self.viewModel.getMakes()
+        self.view.addSubview(picker)
+    }
+    
+    func didModelButtonClicked() {
+        let picker = FiltersPickerView(frame: self.view.frame)
+        picker.didItemSelected = { [weak self] (model) in
+            self?.viewModel.didSelectModel(model: model)
+            self?.tableView.reloadData()
+        }
+
+        picker.data = self.viewModel.getModels()
+        self.view.addSubview(picker)
+    }
+    
     
 }
+
 

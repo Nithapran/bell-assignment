@@ -9,11 +9,17 @@ import Foundation
 
 @MainActor
 class HomeViewModel {
-    let service: CarService
+    private let service: CarService
     
     /// Array of cars
-    var cars: [Car] = []
+    private var cars: [Car] = []
     
+    /// Array of cars used to display
+    var presentableCars: [Car] = []
+    
+    var selectedMake: String?
+    
+    var selectedModel: String?
     
     /// Called after fetch car from service
     var didFetchCar: (() -> Void)?
@@ -36,8 +42,8 @@ class HomeViewModel {
             do {
                 let carList = try await service.getAllCars()
                 self.cars = carList
-                
-                    self.didFetchCar?()
+                self.presentableCars = cars
+                self.didFetchCar?()
                 
                 
             } catch {
@@ -54,4 +60,88 @@ class HomeViewModel {
         }
         
     }
+    
+    /// Filter make names from the car data
+    ///
+    /// - Parameter value: none
+    /// - Returns: none
+    func getMakes() -> [String] {
+        let makes = self.cars.map {
+            $0.make
+        }
+        
+        return makes
+    }
+    
+    /// Filter model names from the car data
+    ///
+    /// - Parameter value: none
+    /// - Returns: none
+    func getModels() -> [String] {
+        if let selectedMake = selectedMake {
+            let filteredCars = cars.filter {
+                $0.make == selectedMake
+            }
+            let models = filteredCars.map {
+                
+                $0.model
+            }
+            return models
+        } else {
+            let models = self.cars.map {
+                
+                $0.model
+            }
+            return models
+        }
+        
+    }
+    
+    /// Filter car data according to the selected Make
+    ///
+    /// - Parameter value: make: Car make
+    /// - Returns: none
+    func didSelectMake(make: String?) {
+        guard let make = make else {
+            clearFilters()
+            return
+        }
+        self.selectedMake = make
+        filterCars()
+        
+    }
+    
+    /// Filter car data according to the selected Model
+    ///
+    /// - Parameter value: model: Car Model
+    /// - Returns: none
+    func didSelectModel(model: String?) {
+        self.selectedModel = model
+        filterCars()
+    }
+    
+    
+    private func filterCars() {
+        presentableCars = cars.filter {
+            if let make = selectedMake {
+                if let model = selectedModel {
+                    return $0.make == make && $0.model == model
+                } else {
+                    return $0.make == make
+                }
+            } else if let model = selectedModel {
+                return $0.model == model
+            } else {
+                return true
+            }
+        }
+    }
+    
+    private func clearFilters() {
+        self.selectedMake = nil
+        self.selectedModel = nil
+        self.presentableCars = self.cars
+    }
+    
+    
 }
