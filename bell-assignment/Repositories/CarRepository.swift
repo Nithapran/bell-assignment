@@ -35,7 +35,7 @@ class CarDataRepository: CarRepository {
         }
     }
     
-    func addcar(car: Car) async -> Car? {
+    private func addcar(car: Car) async -> Car? {
         
                 let car = await localDataSource.addcar(car: car)
             return car

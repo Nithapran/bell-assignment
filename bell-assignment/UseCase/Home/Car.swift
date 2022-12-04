@@ -18,7 +18,7 @@ struct Car: Codable {
     var rating: Int
     
     func getPriceInKFormat() -> String {
-        return "\( marketPrice/1000)k"
+        return String(format: "%.0f k", marketPrice/1000)
     }
     
     func getProsList() -> [String] {

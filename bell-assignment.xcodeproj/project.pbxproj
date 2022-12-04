@@ -123,13 +123,14 @@
 		A0D742DF293A511E00977C5E /* bell-assignment */ = {
 			isa = PBXGroup;
 			children = (
-				A0EEF58F293C1F2500A70F63 /* CarsDataStore.xcdatamodeld */,
 				A0EEF596293C2BE200A70F63 /* CoreData */,
 				A0D74310293A556E00977C5E /* Services */,
-				A0D74323293BC20E00977C5E /* Extensions */,
+				A0EEF5A9293CFA3800A70F63 /* Repositories */,
 				A0D74311293A557800977C5E /* UseCase */,
+				A0D74323293BC20E00977C5E /* Extensions */,
 				A0D742E0293A511E00977C5E /* AppDelegate.swift */,
 				A0D742E2293A511E00977C5E /* SceneDelegate.swift */,
+				A0EEF58F293C1F2500A70F63 /* CarsDataStore.xcdatamodeld */,
 				A0D742E6293A511E00977C5E /* Main.storyboard */,
 				A0D742E9293A512100977C5E /* Assets.xcassets */,
 				A0D742EB293A512100977C5E /* LaunchScreen.storyboard */,
@@ -152,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D74316293A56BA00977C5E /* car_list.json */,
+				A0EEF599293C2F4E00A70F63 /* CarLocalService.swift */,
 				A0D74312293A560E00977C5E /* CarRemoteService.swift */,
 			);
 			path = Services;
@@ -172,7 +174,6 @@
 				A0D742E4293A511E00977C5E /* HomeViewController.swift */,
 				A0D74319293A60B700977C5E /* HomeViewModel.swift */,
 				A0D74314293A568400977C5E /* Car.swift */,
-				A0EEF59F293C496100A70F63 /* CarRepository.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -208,9 +209,16 @@
 				A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */,
 				A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */,
 				A0EEF597293C2C0200A70F63 /* CoreDataStack.swift */,
-				A0EEF599293C2F4E00A70F63 /* CarLocalService.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A0EEF5A9293CFA3800A70F63 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A0EEF59F293C496100A70F63 /* CarRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
