@@ -18,7 +18,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        self.viewModel.getAllCars()
+        Task.init {
+            await self.viewModel.getAllCars()
+        }
+        
     }
     
     private func setUpView() {

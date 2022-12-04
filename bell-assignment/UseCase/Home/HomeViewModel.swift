@@ -36,33 +36,28 @@ class HomeViewModel {
     ///
     /// - Parameter value: none
     /// - Returns: none
-    func getAllCars() {
-        Task.init {
+    func getAllCars() async {
+        
             do {
                 let carList =  try await self.repository.getAllCars()
                 self.cars = carList
                 self.presentableCars = carList
                 self.didFetchCar?()
-            } catch  {
-                    if let err = error as? CarServiceError {
-                        switch err {
-                        case .decodingArror:
-                            print("decoding error")
-                        case .notFoundError:
-                            print("json not found")
-                        }
-                    }
-                    
-                }
+            } catch CarRemoteServiceError.decodingArror {
+                print("decoding error")
+            } catch CarRemoteServiceError.notFoundError {
+                print("json not found")
+            } catch CarLocalServiceError.FetchingFailed {
+                print("json not found")
+            } catch CarLocalServiceError.savingFailed {
+                print("json not found")
+            } catch {
+                print("Unknow error")
+            }
             
-        }
-            
-        }
-    
-    
-    func getCarsFromLocalRepository() {
         
-    }
+            
+        }
     
     /// Filter make names from the car data
     ///
@@ -97,7 +92,6 @@ class HomeViewModel {
             }
             return models
         }
-        
     }
     
     /// Filter car data according to the selected Make

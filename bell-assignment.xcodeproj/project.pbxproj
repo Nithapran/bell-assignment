@@ -13,9 +13,6 @@
 		A0D742E8293A511E00977C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D742E6293A511E00977C5E /* Main.storyboard */; };
 		A0D742EA293A512100977C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D742E9293A512100977C5E /* Assets.xcassets */; };
 		A0D742ED293A512100977C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D742EB293A512100977C5E /* LaunchScreen.storyboard */; };
-		A0D742F8293A512200977C5E /* bell_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D742F7293A512200977C5E /* bell_assignmentTests.swift */; };
-		A0D74302293A512200977C5E /* bell_assignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74301293A512200977C5E /* bell_assignmentUITests.swift */; };
-		A0D74304293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74303293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift */; };
 		A0D74313293A560E00977C5E /* CarRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74312293A560E00977C5E /* CarRemoteService.swift */; };
 		A0D74315293A568400977C5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D74314293A568400977C5E /* Car.swift */; };
 		A0D74317293A56BA00977C5E /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = A0D74316293A56BA00977C5E /* car_list.json */; };
@@ -37,17 +34,12 @@
 		A0EEF59D293C36D100A70F63 /* CarModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */; };
 		A0EEF59E293C36D100A70F63 /* CarModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */; };
 		A0EEF5A0293C496100A70F63 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF59F293C496100A70F63 /* CarRepository.swift */; };
+		A0EEF5A5293C555A00A70F63 /* MockCarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF5A4293C555A00A70F63 /* MockCarRepository.swift */; };
+		A0EEF5A7293C58F800A70F63 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EEF5A6293C58F800A70F63 /* HomeViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A0D742F4293A512200977C5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0D742D5293A511E00977C5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0D742DC293A511E00977C5E;
-			remoteInfo = "bell-assignment";
-		};
-		A0D742FE293A512200977C5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0D742D5293A511E00977C5E /* Project object */;
 			proxyType = 1;
@@ -66,10 +58,6 @@
 		A0D742EC293A512100977C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D742EE293A512100977C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D742F3293A512200977C5E /* bell-assignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bell-assignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0D742F7293A512200977C5E /* bell_assignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bell_assignmentTests.swift; sourceTree = "<group>"; };
-		A0D742FD293A512200977C5E /* bell-assignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bell-assignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0D74301293A512200977C5E /* bell_assignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bell_assignmentUITests.swift; sourceTree = "<group>"; };
-		A0D74303293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bell_assignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A0D74312293A560E00977C5E /* CarRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRemoteService.swift; sourceTree = "<group>"; };
 		A0D74314293A568400977C5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A0D74316293A56BA00977C5E /* car_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
@@ -91,6 +79,9 @@
 		A0EEF59B293C36D100A70F63 /* CarModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0EEF59C293C36D100A70F63 /* CarModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0EEF59F293C496100A70F63 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
+		A0EEF5A4293C555A00A70F63 /* MockCarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCarRepository.swift; sourceTree = "<group>"; };
+		A0EEF5A6293C58F800A70F63 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		A0EEF5A8293C5E6D00A70F63 /* bell-assignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bell-assignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +99,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0D742FA293A512200977C5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,7 +107,6 @@
 			children = (
 				A0D742DF293A511E00977C5E /* bell-assignment */,
 				A0D742F6293A512200977C5E /* bell-assignmentTests */,
-				A0D74300293A512200977C5E /* bell-assignmentUITests */,
 				A0D742DE293A511E00977C5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,7 +116,6 @@
 			children = (
 				A0D742DD293A511E00977C5E /* bell-assignment.app */,
 				A0D742F3293A512200977C5E /* bell-assignmentTests.xctest */,
-				A0D742FD293A512200977C5E /* bell-assignmentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,18 +141,11 @@
 		A0D742F6293A512200977C5E /* bell-assignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0D742F7293A512200977C5E /* bell_assignmentTests.swift */,
+				A0EEF5A8293C5E6D00A70F63 /* bell-assignmentTests-Bridging-Header.h */,
+				A0EEF5A4293C555A00A70F63 /* MockCarRepository.swift */,
+				A0EEF5A6293C58F800A70F63 /* HomeViewModelTest.swift */,
 			);
 			path = "bell-assignmentTests";
-			sourceTree = "<group>";
-		};
-		A0D74300293A512200977C5E /* bell-assignmentUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A0D74301293A512200977C5E /* bell_assignmentUITests.swift */,
-				A0D74303293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift */,
-			);
-			path = "bell-assignmentUITests";
 			sourceTree = "<group>";
 		};
 		A0D74310293A556E00977C5E /* Services */ = {
@@ -276,24 +251,6 @@
 			productReference = A0D742F3293A512200977C5E /* bell-assignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A0D742FC293A512200977C5E /* bell-assignmentUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0D7430D293A512200977C5E /* Build configuration list for PBXNativeTarget "bell-assignmentUITests" */;
-			buildPhases = (
-				A0D742F9293A512200977C5E /* Sources */,
-				A0D742FA293A512200977C5E /* Frameworks */,
-				A0D742FB293A512200977C5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0D742FF293A512200977C5E /* PBXTargetDependency */,
-			);
-			name = "bell-assignmentUITests";
-			productName = "bell-assignmentUITests";
-			productReference = A0D742FD293A512200977C5E /* bell-assignmentUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -309,10 +266,7 @@
 					};
 					A0D742F2293A512200977C5E = {
 						CreatedOnToolsVersion = 14.0;
-						TestTargetID = A0D742DC293A511E00977C5E;
-					};
-					A0D742FC293A512200977C5E = {
-						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
 						TestTargetID = A0D742DC293A511E00977C5E;
 					};
 				};
@@ -332,7 +286,6 @@
 			targets = (
 				A0D742DC293A511E00977C5E /* bell-assignment */,
 				A0D742F2293A512200977C5E /* bell-assignmentTests */,
-				A0D742FC293A512200977C5E /* bell-assignmentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,13 +308,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A0D742F1293A512200977C5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0D742FB293A512200977C5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,16 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D742F8293A512200977C5E /* bell_assignmentTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0D742F9293A512200977C5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0D74304293A512200977C5E /* bell_assignmentUITestsLaunchTests.swift in Sources */,
-				A0D74302293A512200977C5E /* bell_assignmentUITests.swift in Sources */,
+				A0EEF5A5293C555A00A70F63 /* MockCarRepository.swift in Sources */,
+				A0EEF5A7293C58F800A70F63 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +358,6 @@
 			isa = PBXTargetDependency;
 			target = A0D742DC293A511E00977C5E /* bell-assignment */;
 			targetProxy = A0D742F4293A512200977C5E /* PBXContainerItemProxy */;
-		};
-		A0D742FF293A512200977C5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0D742DC293A511E00977C5E /* bell-assignment */;
-			targetProxy = A0D742FE293A512200977C5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -625,15 +558,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EQV48EW98J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nithaparan.bell-assignmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "bell-assignmentTests/bell-assignmentTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bell-assignment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bell-assignment";
@@ -645,54 +586,25 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EQV48EW98J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nithaparan.bell-assignmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "bell-assignmentTests/bell-assignmentTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bell-assignment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bell-assignment";
-			};
-			name = Release;
-		};
-		A0D7430E293A512200977C5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EQV48EW98J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nithaparan.bell-assignmentUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "bell-assignment";
-			};
-			name = Debug;
-		};
-		A0D7430F293A512200977C5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EQV48EW98J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nithaparan.bell-assignmentUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "bell-assignment";
 			};
 			name = Release;
 		};
@@ -722,15 +634,6 @@
 			buildConfigurations = (
 				A0D7430B293A512200977C5E /* Debug */,
 				A0D7430C293A512200977C5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0D7430D293A512200977C5E /* Build configuration list for PBXNativeTarget "bell-assignmentUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0D7430E293A512200977C5E /* Debug */,
-				A0D7430F293A512200977C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

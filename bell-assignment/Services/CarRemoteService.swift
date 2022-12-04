@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CarServiceError: Error {
+enum CarRemoteServiceError: Error {
     case decodingArror
     
     case notFoundError
@@ -36,7 +36,7 @@ class CarRemoteService: CarDataSource {
     
     func getAllCars() async throws -> [Car] {
         guard let path = Bundle.main.url(forResource: "car_list", withExtension: "json") else {
-            throw CarServiceError.notFoundError
+            throw CarRemoteServiceError.notFoundError
         }
         
         
@@ -46,7 +46,7 @@ class CarRemoteService: CarDataSource {
             return carList
             
         } catch {
-            throw CarServiceError.decodingArror
+            throw CarRemoteServiceError.decodingArror
         }
     }
     
